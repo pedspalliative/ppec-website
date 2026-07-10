@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact · PPEC</title>
+    <meta
+      name="description"
+      content="Talk with the PPEC team about education, consultation, or mentorship for your pediatric palliative care work."
+    />
+    <link rel="canonical" href="https://pedspalliative.org/contact.html" />
+    <meta property="og:site_name" content="Pediatric Palliative Education Consultants" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pedspalliative.org/contact.html" />
+    <meta property="og:title" content="Contact · PPEC" />
+    <meta
+      property="og:description"
+      content="Talk with the PPEC team about education, consultation, or mentorship for your pediatric palliative care work."
+    />
+    <meta property="og:image" content="https://pedspalliative.org/assets/logo-stacked-navy.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Contact · PPEC" />
+    <meta
+      name="twitter:description"
+      content="Talk with the PPEC team about education, consultation, or mentorship for your pediatric palliative care work."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="assets/favicon.ico" sizes="any" />
+    <link rel="stylesheet" href="css/styles.css?v=5" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a href="index.html" class="nav__logo" aria-label="PPEC home">
+          <img
+            src="assets/logo-h-onlight.png"
+            alt="Pediatric Palliative Education Consultants"
+          />
+        </a>
+        <button
+          class="nav__toggle"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+        >
+          Menu
+        </button>
+        <ul class="nav__links" id="primary-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Who We Are</a></li>
+          <li><a href="services.html">What We Offer</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li>
+            <a href="contact.html?interest=explore" class="nav__cta active"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <p class="eyebrow eyebrow--light">Contact</p>
+          <h1>Let's Talk About Your Team</h1>
+          <p>
+            Whether you have a specific training need or just want to explore
+            what's possible, we'd love to hear from you.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="contact-grid">
+            <!-- FORM -->
+            <form
+              class="form"
+              action="mailto:info@pedspalliative.org"
+              method="post"
+              enctype="text/plain"
+            >
+              <div>
+                <label for="name">Name <span class="req">*</span></label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div>
+                <label for="email">Email <span class="req">*</span></label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div>
+                <label for="org">Organization / Institution</label>
+                <input type="text" id="org" name="organization" />
+              </div>
+              <div>
+                <label for="interest">I'm interested in…</label>
+                <select id="interest" name="interest">
+                  <option>Education &amp; Training</option>
+                  <option>Consultation</option>
+                  <option>Mentorship</option>
+                  <option>Just exploring</option>
+                </select>
+              </div>
+              <div>
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Tell us a little about your team, your goals, or the questions you're sitting with."
+                ></textarea>
+              </div>
+              <div>
+                <button type="submit" class="btn btn--primary">
+                  Send Message →
+                </button>
+              </div>
+              <p class="muted" style="font-size: 0.82rem; margin-top: 0.5rem">
+                We'll be in touch within 2 business days.
+                <span class="placeholder-tag">Form back-end pending</span>
+              </p>
+            </form>
+
+            <!-- DIRECT INFO -->
+            <aside class="contact-info">
+              <h3>Direct contact</h3>
+              <dl>
+                <div>
+                  <dt>Email</dt>
+                  <dd>
+                    <a href="mailto:info@pedspalliative.org"
+                      >info@pedspalliative.org</a
+                    >
+                  </dd>
+                </div>
+                <div>
+                  <dt>Location</dt>
+                  <dd>Serving institutions and teams nationwide.</dd>
+                </div>
+                <div>
+                  <dt>Response time</dt>
+                  <dd>Within 2 business days.</dd>
+                </div>
+              </dl>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <img src="assets/logo-h-ondark.png" alt="PPEC" />
+            <p class="site-footer__tagline">
+              Building skill, compassion, and confidence in
+              <span class="nowrap">pediatric palliative care</span>.
+            </p>
+          </div>
+          <div>
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">Who We Are</a></li>
+              <li><a href="services.html">What We Offer</a></li>
+              <li><a href="resources.html">Resources</a></li>
+              <li><a href="contact.html?interest=explore">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Connect</h4>
+            <ul>
+              <li>
+                <a href="mailto:info@pedspalliative.org"
+                  >info@pedspalliative.org</a
+                >
+              </li>
+              <li>Serving teams nationwide</li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__legal">
+          © 2026 Pediatric Palliative Education Consultants. Founded on the
+          pioneering work of PANDA Education Consultants, PLLC.
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
