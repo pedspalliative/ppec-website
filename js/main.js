@@ -121,3 +121,68 @@
     if (e.key === "Escape" && !modal.hidden) close();
   });
 })();
+
+// Contact form submit — posts to Web3Forms (info@ shared mailbox) via fetch so
+// the visitor gets an on-page confirmation instead of leaving for the hosted
+// success page. If JS is unavailable the native POST still delivers.
+(function () {
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
+  if (!form || !status) return;
+
+  function show(message, ok) {
+    status.textContent = message;
+    status.style.color = ok ? "var(--navy, #1b4965)" : "#b3261e";
+    status.hidden = false;
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // Honeypot — if a bot ticked the hidden box, pretend success and stop.
+    if (form.botcheck && form.botcheck.checked) {
+      show("Thanks — your message has been sent.", true);
+      form.reset();
+      return;
+    }
+
+    const button = form.querySelector("button[type='submit']");
+    const original = button ? button.textContent : "";
+    if (button) {
+      button.disabled = true;
+      button.textContent = "Sending…";
+    }
+    show("Sending…", true);
+
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(form),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.success) {
+        show(
+          "Thanks — your message has been sent. We'll be in touch within 2 business days.",
+          true,
+        );
+        form.reset();
+      } else {
+        show(
+          "Something went wrong sending your message. Please email us directly at info@pedspalliative.org.",
+          false,
+        );
+      }
+    } catch (err) {
+      show(
+        "Couldn't reach the server. Please email us directly at info@pedspalliative.org.",
+        false,
+      );
+    } finally {
+      if (button) {
+        button.disabled = false;
+        button.textContent = original;
+      }
+    }
+  });
+})();
