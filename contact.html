@@ -9,7 +9,10 @@
       content="Talk with the PPEC team about education, consultation, or mentorship for your pediatric palliative care work."
     />
     <link rel="canonical" href="https://pedspalliative.org/contact.html" />
-    <meta property="og:site_name" content="Pediatric Palliative Education Consultants" />
+    <meta
+      property="og:site_name"
+      content="Pediatric Palliative Education Consultants"
+    />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://pedspalliative.org/contact.html" />
     <meta property="og:title" content="Contact · PPEC" />
@@ -17,8 +20,15 @@
       property="og:description"
       content="Talk with the PPEC team about education, consultation, or mentorship for your pediatric palliative care work."
     />
-    <meta property="og:image" content="https://pedspalliative.org/assets/logo-stacked-navy.png" />
+    <meta
+      property="og:image"
+      content="https://pedspalliative.org/assets/logo-stacked-navy.png"
+    />
     <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:image"
+      content="https://pedspalliative.org/assets/logo-stacked-navy.png"
+    />
     <meta name="twitter:title" content="Contact · PPEC" />
     <meta
       name="twitter:description"
@@ -32,6 +42,26 @@
     />
     <link rel="icon" href="assets/favicon.ico" sizes="any" />
     <link rel="stylesheet" href="css/styles.css?v=5" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Pediatric Palliative Education Consultants",
+        "alternateName": "PPEC",
+        "url": "https://pedspalliative.org/",
+        "logo": "https://pedspalliative.org/assets/logo-stacked-navy.png",
+        "email": "info@pedspalliative.org",
+        "description": "Pediatric palliative care education, consultation, and mentorship for the interprofessional teams who care for children with serious illness.",
+        "areaServed": "US",
+        "knowsAbout": [
+          "Pediatric palliative care",
+          "Interprofessional education",
+          "Clinical mentorship",
+          "Goals of care communication",
+          "Program consultation"
+        ]
+      }
+    </script>
   </head>
   <body>
     <header class="site-header">
@@ -81,10 +111,34 @@
             <!-- FORM -->
             <form
               class="form"
-              action="mailto:info@pedspalliative.org"
-              method="post"
-              enctype="text/plain"
+              id="contact-form"
+              action="https://api.web3forms.com/submit"
+              method="POST"
             >
+              <!-- Web3Forms delivery — submissions land in the info@ shared
+                   mailbox. Replace the access_key value with the real key
+                   (from web3forms.com, registered against info@pedspalliative.org)
+                   before deploying. -->
+              <input
+                type="hidden"
+                name="access_key"
+                value="a3045221-800d-4a3e-880b-ab8ae08a239c"
+              />
+              <input
+                type="hidden"
+                name="subject"
+                value="New inquiry from pedspalliative.org"
+              />
+              <input type="hidden" name="from_name" value="PPEC Website" />
+              <!-- Honeypot: bots fill this; real visitors never see it -->
+              <input
+                type="checkbox"
+                name="botcheck"
+                style="display: none !important"
+                tabindex="-1"
+                autocomplete="off"
+                aria-hidden="true"
+              />
               <div>
                 <label for="name">Name <span class="req">*</span></label>
                 <input type="text" id="name" name="name" required />
@@ -121,8 +175,14 @@
               </div>
               <p class="muted" style="font-size: 0.82rem; margin-top: 0.5rem">
                 We'll be in touch within 2 business days.
-                <span class="placeholder-tag">Form back-end pending</span>
               </p>
+              <p
+                id="form-status"
+                class="form-status"
+                role="status"
+                aria-live="polite"
+                hidden
+              ></p>
             </form>
 
             <!-- DIRECT INFO -->
